@@ -6,6 +6,7 @@ export type setUserData = (jwtToken: string, id: string) => void;
 export type clearUserData = () => void;
 
 export function useAuth() {
+  const [ready, setReady] = useState(false);
   const [token, setToken] = useState("");
   const [userId, setUserId] = useState("");
 
@@ -37,7 +38,9 @@ export function useAuth() {
         login(data.token, data.userId);
       }
     }
+
+    setReady(true);
   }, [login]);
 
-  return { login, logout, token, userId };
+  return { login, logout, token, userId, ready };
 }

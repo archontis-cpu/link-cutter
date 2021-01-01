@@ -1,0 +1,6 @@
+{
+  "port": 5000,
+  "jwtSecret": "infinity",
+  "mongoUri": "mongodb+srv://archontis:5ExSnaLakj4Sv6U0@cluster0.iq8dg.mongodb.net/app?retryWrites=true&w=majority",
+  "baseUrl": "http://localhost:5000"
+}

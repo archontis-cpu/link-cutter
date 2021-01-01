@@ -28,7 +28,7 @@ const AuthPage = () => {
   }, [error, message, clearError]);
 
   useEffect(() => {
-    window.M.updateTextFields();
+    window?.M?.updateTextFields();
   });
 
   const tryAuth = async (action: "register" | "login") => {

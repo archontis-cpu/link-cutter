@@ -34,7 +34,6 @@ const CreatePage = () => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${auth.token}`,
         });
-
         const path = "/detail/" + data.link._id;
         history.push(path);
       } catch (error) {}
@@ -42,7 +41,7 @@ const CreatePage = () => {
   };
 
   useEffect(() => {
-    window.M.updateTextFields();
+    window?.M?.updateTextFields();
   });
 
   return (

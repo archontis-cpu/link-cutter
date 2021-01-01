@@ -4,14 +4,19 @@ import "materialize-css";
 import hooks from "./hooks";
 import { AuthContext } from "./context/AuthContext";
 import Navbar from "./components/Navbar";
+import Loader from "./components/Loader";
 
 const { useAuth, useRoutes } = hooks;
 
 function App() {
-  const { login, logout, token, userId } = useAuth();
+  const { login, logout, token, userId, ready } = useAuth();
 
   const isAuthenticated = !!token;
   const routes = useRoutes(isAuthenticated);
+
+  if (!ready) {
+    return <Loader />;
+  }
 
   const provide = {
     token,
